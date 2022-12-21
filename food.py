@@ -3,6 +3,11 @@ from random import randint
 
 
 class Food(Turtle):
+"""
+   food object for snake game
+   generates random coordinates for placement
+   when snake collides we run self.refresh
+"""
 
 	def __init__(self):
 		super().__init__()

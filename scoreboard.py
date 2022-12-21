@@ -4,6 +4,9 @@ FONT = ("Courier", 24, "normal")
 
 
 class Scoreboard(Turtle):
+	"""
+	Scoreboard class in turtle for displaying scores at the top of the game window
+	"""
 
 	def __init__(self):
 		super().__init__()
@@ -16,8 +19,9 @@ class Scoreboard(Turtle):
 		self.color("white")
 		self.goto(0, 250)
 		self.update_scoreboard()
+		
 
-
+	#clears and updates score board for tracking game score and high score
 	def update_scoreboard(self):
 		self.clear()
 		self.write(f"Score: {self.score}    High Score: {self.high_score}", align=ALIGNMENT, font=FONT)

@@ -4,18 +4,23 @@ from snake import Snake
 from food import Food
 from scoreboard import Scoreboard
 
+# setting up screen object for game
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Snake Game")
 screen.tracer(0)
+# creating scoreboard object for score display
 scoreboard = Scoreboard()
 
+# creating food and snake objects for game from food.py and snake.py
 food = Food()
 snake = Snake()
 
+# creates 3 squares for the body of the snake for game start
 snake.create_snake()
 
+# snake controls
 screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")
@@ -24,6 +29,7 @@ screen.onkey(snake.right, "Right")
 
 game_is_on = True
 
+# main gameplay loop
 while game_is_on:
 	screen.update()
 	time.sleep(0.1)
@@ -46,5 +52,5 @@ while game_is_on:
 			snake.reset()
 
 
-
+# click to exit at any time
 screen.exitonclick()
